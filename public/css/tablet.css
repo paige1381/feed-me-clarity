@@ -1,0 +1,31 @@
+@media (min-width: 600px) {
+  .slide-menu {
+    width: 35%;
+    left: -35%;
+  }
+
+  .slide {
+    left: 0;
+  }
+
+  .logo {
+    padding: 40px;
+    height: 450px;
+  }
+
+  .logo-text {
+    padding: 45px 0 35px 0;
+    width: 55%;
+    text-align: center;
+    letter-spacing: 7px;
+    font-size: 44px;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .tablet {
+    display: flex;
+  }
+}

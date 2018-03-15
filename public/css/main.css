@@ -1,0 +1,164 @@
+@font-face {
+  src: url('./fonts/SIMPLIFICA Typeface.ttf');
+  font-family: 'Simplifica';
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial';
+  font-size: 14px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  opacity: .5;
+}
+
+header {
+  border-bottom: 1px solid grey;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: white;
+  height: 65px;
+  align-items: center;
+  display: flex;
+  font-family: 'Simplifica';
+  font-size: 32px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu-icon {
+  margin: 0;
+  font-size: 32px !important;
+}
+
+.menu-bkgd {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  top: 0;
+  left: -100%;
+  z-index: 4;
+}
+
+.slide-menu {
+  width: 45%;
+  height: 100%;
+  position: fixed;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  z-index: 5;
+  left: -45%;
+  top: 0;
+  margin: 65px 0 0 0;
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.menu-link {
+  padding: 30px 20px 20px 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  margin: 0;
+}
+
+.menu-link > h5 {
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+.slide {
+  left: 0;
+}
+
+.logo {
+  height: 300px;
+  width: 100%;
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-0.3.5&s=b6b4ac322517d8d4a3565438ed23d376&auto=format&fit=crop&w=1262&q=80");
+  background-size: cover;
+  margin-top: 65px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 35px;
+  border-bottom: 1px solid grey;
+}
+
+.logo-text {
+  padding:  30px 20px 20px 20px;
+  width: 50%;
+  background-color: white;
+  word-wrap: normal;
+  border: 2px solid black;
+  font-family: 'Simplifica';
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 40px;
+  line-height: 44px;
+}
+
+main {
+  width: 100%;
+  flex: 1 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.tablet {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: flex;
+}

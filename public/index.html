@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="feedMeClarity">
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed Me Clarity</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/tablet.css">
+    <link rel="stylesheet" href="../css/desktop.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../app.js"></script>
+  </head>
+  <body>
+
+    <header ng-controller="MenuController as ctrl">
+
+      <nav class="mobile tablet">
+        <i class="material-icons menu-icon" ng-click="ctrl.mobileMenu = !ctrl.mobileMenu">menu</i>
+      </nav>
+      <div class="mobile tablet menu-bkgd" ng-click="ctrl.mobileMenu = false" ng-class="ctrl.mobileMenu? 'slide' : ''">
+      </div>
+      <div class="slide-menu column" ng-class="ctrl.mobileMenu? 'slide' : ''">
+        <a class="menu-link row" href="/" ng-click="ctrl.mobileMenu = false">
+          <h5>Home</h5>
+        </a>
+        <a class="menu-link row" href="/mind" ng-click="ctrl.mobileMenu = false">
+          <h5>Mind</h5>
+        </a>
+        <a class="menu-link row" href="/body" ng-click="ctrl.mobileMenu = false">
+          <h5>Body</h5>
+        </a>
+        <a class="menu-link row" href="/soul" ng-click="ctrl.mobileMenu = false">
+          <h5>Soul</h5>
+        </a>
+      </div>
+
+
+
+<!-- https://images.unsplash.com/photo-1514852451047-f8e1d1cd9b64?ixlib=rb-0.3.5&s=adf2f68eb7b8eb3917d117dd6c427a53&auto=format&fit=crop&w=1412&q=80 -->
+
+      <nav class="desktop header row">
+        <div class="column">
+          <div class="row">
+            <a class="menu-link row" href="/mind">
+              <h3>Mind</h3>
+            </a>
+            <a class="menu-link row" href="/body">
+              <h3>Body</h3>
+            </a>
+            <a class="menu-link row" href="/soul">
+              <h3>Soul</h3>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </header>
+
+    <div class="logo">
+      <h1 class="logo-text">Feed Me Clarity</h1>
+    </div>
+
+
+
+    <main >
+    </main>
+
+    <footer>
+    </footer>
+
+  </body>
+</html>
