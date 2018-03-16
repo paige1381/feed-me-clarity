@@ -19,6 +19,10 @@
 
       <nav class="mobile tablet">
         <i class="material-icons menu-icon" ng-click="ctrl.mobileMenu = !ctrl.mobileMenu">menu</i>
+        <div class="row search">
+          <i class="material-icons search-icon">search</i>
+          <input class="search-box" type="text" placeholder="search"></input>
+        </div>
       </nav>
       <div class="mobile tablet menu-bkgd" ng-click="ctrl.mobileMenu = false" ng-class="ctrl.mobileMenu? 'slide' : ''">
       </div>
@@ -37,13 +41,24 @@
         </a>
       </div>
 
-
-
 <!-- https://images.unsplash.com/photo-1514852451047-f8e1d1cd9b64?ixlib=rb-0.3.5&s=adf2f68eb7b8eb3917d117dd6c427a53&auto=format&fit=crop&w=1412&q=80 -->
 
-      <nav class="desktop header row">
-        <div class="column">
-          <div class="row">
+      <nav class="desktop column">
+          <div class="row search-tags">
+            <div class="tags row">
+              <h4>Recent tags</h4>
+              <a href="#"><p>#Lorem</p></a>
+              <a href="#"><p>#ipsum</p></a>
+              <a href="#"><p>#dolor</p></a>
+              <a href="#"><p>#sit amet</p></a>
+              <a href="#"><p>#consectetur</p></a>
+            </div>
+            <div class="row search">
+              <i class="material-icons search-icon">search</i>
+              <input class="search-box" type="text" placeholder="search"></input>
+            </div>
+          </div>
+          <div class="row menu">
             <a class="menu-link row" href="/mind">
               <h3>Mind</h3>
             </a>
@@ -54,7 +69,6 @@
               <h3>Soul</h3>
             </a>
           </div>
-        </div>
       </nav>
 
     </header>
@@ -68,7 +82,21 @@
     <main >
     </main>
 
-    <footer>
+    <footer class="column">
+      <div class="social-media row">
+        <img class="social-media-icon" src="../css/images/twitter.svg">
+        <img class="social-media-icon" src="../css/images/pinterest.svg">
+        <img class="social-media-icon" src="../css/images/facebook.svg">
+        <img class="social-media-icon" src="../css/images/instagram.svg">
+      </div>
+      <div>
+        <h6>
+          Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+        </h6>
+        <h6>
+          Photos by rawpixel.com on Unsplash
+        </h6>
+      </div>
     </footer>
 
   </body>

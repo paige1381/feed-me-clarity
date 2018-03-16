@@ -7,11 +7,50 @@
     height: auto;
     position: inherit;
     flex-shrink: 0;
+    height: 150px;
+  }
+
+  nav {
+    width: 1280px;
+    height: 100%;
+    margin: 10px auto;
+    justify-content: space-between;
+  }
+
+  .search-tags {
+    width: 100%;
+    justify-content: space-between;
+    align-self: flex-start;
+    font-family: 'Arial';
+  }
+
+  .tags {
+    align-items: baseline;
+  }
+
+  .tags h4 {
+    font-size: 18px;
+    margin: 0 5px 0 0;
+  }
+
+  .tags p {
+    font-size: 14px;
+    margin: 0 5px;
+    color: grey;
+  }
+
+  .search-box {
+    width: 200px;
+  }
+
+
+  .menu {
+    justify-content: center;
   }
 
   .menu-link {
     border: none;
-    margin: 0 20px;
+    margin: 0 60px;
     padding: 10px 0 0 0;
   }
 
@@ -35,7 +74,6 @@
     font-size: 60px;
     padding: 60px 0 50px 0;
   }
-
 
   .mobile {
     display: none;

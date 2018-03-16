@@ -52,6 +52,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 .menu-icon {
@@ -102,6 +103,24 @@ nav {
   letter-spacing: 3px;
 }
 
+.search {
+  color: grey;
+  font-family: 'Arial';
+}
+
+.search-icon {
+  font-size: 18px;
+}
+
+.search-box {
+  border: none;
+  border-bottom: 1px solid grey;
+  width: 150px;
+  height: 20px;
+  font-size: 14px;
+  padding: 10px;
+}
+
 .slide {
   left: 0;
 }
@@ -137,6 +156,33 @@ nav {
 main {
   width: 100%;
   flex: 1 0 auto;
+}
+
+footer {
+  width: 100%;
+  border-top: 1px solid grey;
+  padding: 10px;
+}
+
+.social-media {
+  width: 100%;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.social-media-icon {
+  width: 30px;
+  height: 30px;
+}
+
+footer h6 {
+  margin: 5px;
+  color: grey;
+}
+
+footer a {
+  color: grey;
+  text-decoration: underline;
 }
 
 .row {
