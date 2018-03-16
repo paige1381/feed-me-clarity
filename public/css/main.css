@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+* {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Arial';
   font-size: 14px;
@@ -45,6 +49,7 @@ header {
   display: flex;
   font-family: 'Simplifica';
   font-size: 32px;
+  flex-shrink: 0;
 }
 
 nav {
@@ -121,6 +126,10 @@ nav {
   padding: 10px;
 }
 
+input:focus {
+  outline: none;
+}
+
 .slide {
   left: 0;
 }
@@ -138,6 +147,7 @@ nav {
   justify-content: flex-end;
   padding: 35px;
   border-bottom: 1px solid grey;
+  flex-shrink: 0;
 }
 
 .logo-text {
@@ -154,14 +164,64 @@ nav {
 }
 
 main {
-  width: 100%;
   flex: 1 0 auto;
+  margin: 30px 10px;
+}
+
+.recent-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  border: 1px solid grey;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-section {
+  padding: 20px;
+}
+
+.card-title {
+  margin: 0 0 10px 0;
+  font-family: 'Simplifica';
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 24px;
+  text-align: left;
+}
+
+.card-text {
+  margin: 0;
+  letter-spacing: .5px;
+  line-height: 18px;
+}
+
+.card-link {
+  border-top: 1px solid grey;
+  padding: 15px 10px 10px 10px;
+  font-family: 'Simplifica';
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 20px;
+  text-align: right;
+  width: 100%;
 }
 
 footer {
   width: 100%;
   border-top: 1px solid grey;
   padding: 10px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .social-media {

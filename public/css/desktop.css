@@ -6,7 +6,6 @@
   header {
     height: auto;
     position: inherit;
-    flex-shrink: 0;
     height: 150px;
   }
 
