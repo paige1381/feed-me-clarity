@@ -14,6 +14,7 @@
 body {
   font-family: 'Arial';
   font-size: 14px;
+  letter-spacing: .5px;
   width: 100%;
   margin: 0;
   display: flex;
@@ -126,7 +127,7 @@ nav {
   padding: 10px;
 }
 
-input:focus {
+input:focus, button:focus {
   outline: none;
 }
 
@@ -165,12 +166,15 @@ input:focus {
 
 main {
   flex: 1 0 auto;
-  margin: 30px 10px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .recent-cards {
   display: flex;
   flex-direction: column;
+  margin: 15px 10px;
 }
 
 .card {
@@ -200,7 +204,6 @@ main {
 
 .card-text {
   margin: 0;
-  letter-spacing: .5px;
   line-height: 18px;
 }
 
@@ -213,6 +216,50 @@ main {
   font-size: 20px;
   text-align: right;
   width: 100%;
+}
+
+.about {
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1517260739337-6799d239ce83?ixlib=rb-0.3.5&s=49c6fe28feb3d646bef2fc6901a2621e&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-section {
+  background-color: rgba(255, 255, 255, .8);
+  margin: 20px 0;
+}
+
+.subscribe {
+  align-items: center;
+}
+
+.subscribe-box {
+  border: 1px solid grey;
+  background-color: rgba(255, 255, 255, .6);
+  width: 75%;
+  height: 20px;
+  font-size: 14px;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: 'Arial';
+}
+
+.subscribe-button {
+  border: 1px solid grey;
+  background-color: rgba(255, 255, 255, .6);
+  margin-left: 5px;
+  height: 22px;
+  font-size: 16px;
+  font-family: 'Simplifica';
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  padding: 3px 10px 0 10px;
 }
 
 footer {
