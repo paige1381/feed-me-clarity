@@ -262,6 +262,66 @@ main {
   padding: 3px 10px 0 10px;
 }
 
+.popular {
+  margin: 35px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popular h2 {
+  font-family: 'Simplifica';
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 32px;
+  margin: 0;
+  width: 60%;
+  border-bottom: 1px solid grey;
+}
+
+.popular-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.popular-card {
+  width: 50%;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.popular-card:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.popular-image {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popular-title {
+  position: absolute;
+  width: 90%;
+  padding: 15px 15px 10px 15px;
+  text-align: center;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-family: 'Simplifica';
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, .8);
+}
+
 footer {
   width: 100%;
   border-top: 1px solid grey;
