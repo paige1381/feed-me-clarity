@@ -3,6 +3,17 @@
   font-family: 'Simplifica';
 }
 
+@font-face {
+  src: url('./fonts/Gotham-Light.otf');
+  font-family: 'Gotham Light';
+}
+
+@font-face {
+  src: url('./fonts/Gotham-Bold.otf');
+  font-family: 'Gotham Bold';
+}
+
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -12,9 +23,9 @@
 }
 
 body {
-  font-family: 'Arial';
+  font-family: 'Gotham Light';
   font-size: 14px;
-  letter-spacing: .5px;
+  letter-spacing: .25px;
   width: 100%;
   margin: 0;
   display: flex;
@@ -111,7 +122,6 @@ nav {
 
 .search {
   color: grey;
-  font-family: 'Arial';
 }
 
 .search-icon {
@@ -125,6 +135,7 @@ nav {
   height: 20px;
   font-size: 14px;
   padding: 10px;
+  font-family: 'Gotham Light';
 }
 
 input:focus, button:focus {
@@ -136,16 +147,16 @@ input:focus, button:focus {
 }
 
 .logo {
-  height: 300px;
+  height: 250px;
   width: 100%;
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-0.3.5&s=b6b4ac322517d8d4a3565438ed23d376&auto=format&fit=crop&w=1262&q=80");
+  background-image: url("https://images.pexels.com/photos/134877/pexels-photo-134877.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
   background-size: cover;
   margin-top: 65px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 35px;
   border-bottom: 1px solid grey;
   flex-shrink: 0;
@@ -153,7 +164,6 @@ input:focus, button:focus {
 
 .logo-text {
   padding:  30px 20px 20px 20px;
-  width: 50%;
   background-color: white;
   word-wrap: normal;
   border: 2px solid black;
@@ -162,6 +172,10 @@ input:focus, button:focus {
   letter-spacing: 3px;
   font-size: 40px;
   line-height: 44px;
+}
+
+.logo-text:hover {
+  opacity: 1;
 }
 
 main {
@@ -202,7 +216,7 @@ main {
   text-align: left;
 }
 
-.card-text {
+.card-text, .drilldown-subheading, .blog-text {
   margin: 0;
   line-height: 18px;
 }
@@ -220,9 +234,8 @@ main {
 
 .about {
   width: 100%;
-  background-image: url("https://images.unsplash.com/photo-1517260739337-6799d239ce83?ixlib=rb-0.3.5&s=49c6fe28feb3d646bef2fc6901a2621e&auto=format&fit=crop&w=1350&q=80");
+  background-image: linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0)), url("./images/green-watercolor.jpg");
   background-size: cover;
-  border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   padding: 20px 10px;
   display: flex;
@@ -246,7 +259,7 @@ main {
   font-size: 14px;
   padding: 10px;
   margin: 10px 0;
-  font-family: 'Arial';
+  font-family: 'Gotham Light';
 }
 
 .subscribe-button {
@@ -262,13 +275,13 @@ main {
   padding: 3px 10px 0 10px;
 }
 
-.popular {
+.popular, .blog {
   margin: 35px 10px;
   display: flex;
   flex-direction: column;
 }
 
-.popular h2 {
+.popular-heading, .drilldown-heading, .blog-heading {
   font-family: 'Simplifica';
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -276,6 +289,7 @@ main {
   margin: 0;
   width: 60%;
   border-bottom: 1px solid grey;
+  padding: 0 10px;
 }
 
 .popular-images {
@@ -322,6 +336,105 @@ main {
   background-color: rgba(255, 255, 255, .8);
 }
 
+.drilldown {
+  margin: 35px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.drilldown-heading  {
+  align-self: center;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 36px;
+}
+
+.drilldown-subheading {
+  margin: 10px 10px 0 10px;
+  text-align: center;
+}
+
+.blog-heading {
+  width: 80%;
+  align-self: center;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 36px;
+  margin: 0 0 15px 0;
+}
+
+.blog-section {
+  margin: 0 0 15px 0;
+}
+
+.blog-text {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.feature-image {
+  width: 100%;
+  object-fit: cover;
+  height: 350px;
+  margin: 0 0 15px 0;
+}
+
+.blog-image {
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
+  margin: 0 0 15px 0;
+}
+
+.search-tags {
+  width: 100%;
+  justify-content: space-between;
+  align-self: flex-start;
+  font-family: 'Gotham Light';
+}
+
+.tags {
+  align-items: baseline;
+}
+
+.tags h4 {
+  font-size: 18px;
+  margin: 0 10px 0 0;
+  font-family: 'Gotham Bold';
+}
+
+.tags p {
+  font-size: 14px;
+  margin: 0 10px 0 0;
+  color: grey;
+  line-height: 18px;
+}
+
+.recipe {
+  margin: 15px 0 0 0;
+}
+
+.recipe-title {
+  font-size: 14px;
+  font-family: 'Gotham Bold';
+  margin: 0 0 10px 0;
+}
+
+.recipe-subtitle {
+  margin: 0 0 0 5px;
+  font-size: 14px;
+}
+
+ul, ol {
+  margin: 5px 10px 10px 10px;
+  padding-left: 20px;
+  list-style-position: inside;
+}
+
+li {
+  margin: 10px 0 0 0;
+}
+
 footer {
   width: 100%;
   border-top: 1px solid grey;
@@ -340,6 +453,12 @@ footer {
 .social-media-icon {
   width: 30px;
   height: 30px;
+  overflow-y: hidden;
+}
+
+.social-media-icon > img {
+  width: 100%;
+  height: 100%;
 }
 
 footer h6 {

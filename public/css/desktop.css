@@ -7,6 +7,7 @@
     height: auto;
     position: inherit;
     height: 150px;
+    overflow-y: hidden;
   }
 
   nav {
@@ -16,32 +17,9 @@
     justify-content: space-between;
   }
 
-  .search-tags {
-    width: 100%;
-    justify-content: space-between;
-    align-self: flex-start;
-    font-family: 'Arial';
-  }
-
-  .tags {
-    align-items: baseline;
-  }
-
-  .tags h4 {
-    font-size: 18px;
-    margin: 0 5px 0 0;
-  }
-
-  .tags p {
-    font-size: 14px;
-    margin: 0 5px;
-    color: grey;
-  }
-
   .search-box {
     width: 200px;
   }
-
 
   .menu {
     justify-content: center;
@@ -61,7 +39,7 @@
   }
 
   .logo {
-    height: 500px;
+    height: 400px;
     width: 1280px;
     margin: auto;
     padding: 70px;
@@ -79,9 +57,26 @@
     margin: 20px auto;
   }
 
+  .recent-cards {
+    width: 80%;
+    margin: 15px auto;
+  }
+
   .about-section {
     width: 40%;
   }
+
+  .drilldown {
+    width: 80%;
+    margin: 35px auto;
+  }
+
+  .blog {
+    align-items: center;
+    width: 60%;
+    margin: 35px auto;
+  }
+
 
   .mobile {
     display: none;
