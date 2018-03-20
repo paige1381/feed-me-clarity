@@ -13,7 +13,6 @@
   font-family: 'Gotham Bold';
 }
 
-
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -107,7 +106,7 @@ nav {
   background-color: rgba(255, 255, 255, .9);
 }
 
-.menu-link {
+.menu-link, .create-link {
   padding: 30px 20px 20px 20px;
   justify-content: space-between;
   align-items: center;
@@ -138,7 +137,7 @@ nav {
   font-family: 'Gotham Light';
 }
 
-input:focus, button:focus {
+input:focus, button:focus, textarea:focus {
   outline: none;
 }
 
@@ -185,7 +184,7 @@ main {
   flex-direction: column;
 }
 
-.recent-cards {
+.recent-cards, .index-cards {
   display: flex;
   flex-direction: column;
   margin: 15px 10px;
@@ -216,7 +215,7 @@ main {
   text-align: left;
 }
 
-.card-text, .drilldown-subheading, .blog-text {
+.card-text, .index-subheading, .blog-text {
   margin: 0;
   line-height: 18px;
 }
@@ -275,13 +274,13 @@ main {
   padding: 3px 10px 0 10px;
 }
 
-.popular, .blog {
+.popular, .blog, .create {
   margin: 35px 10px;
   display: flex;
   flex-direction: column;
 }
 
-.popular-heading, .drilldown-heading, .blog-heading {
+.popular-heading, .index-heading, .blog-heading {
   font-family: 'Simplifica';
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -336,22 +335,25 @@ main {
   background-color: rgba(255, 255, 255, .8);
 }
 
-.drilldown {
+.index {
   margin: 35px 0;
   display: flex;
   flex-direction: column;
 }
 
-.drilldown-heading  {
+.index-heading  {
   align-self: center;
   text-align: center;
   letter-spacing: 5px;
   font-size: 36px;
+  width: 80%;
 }
 
-.drilldown-subheading {
-  margin: 10px 10px 0 10px;
+.index-subheading {
+  margin: 10px 0 0 0;
   text-align: center;
+  align-self: center;
+  width: 80%;
 }
 
 .blog-heading {
@@ -433,6 +435,91 @@ ul, ol {
 
 li {
   margin: 10px 0 0 0;
+}
+
+.create-link {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.create-link h4 {
+  margin: 0;
+}
+
+.back-link {
+  align-items: center;
+}
+
+.back-link h4 {
+  margin: 0;
+}
+
+.form-section {
+  background-color: rgba(211, 211, 211, .4);
+  padding: 20px 10px;
+  margin: 10px 0;
+}
+
+input, textarea {
+  font-family: 'Gotham Light';
+  font-size: 14px;
+  margin: 10px 0;
+  letter-spacing: .25px;
+}
+
+.input {
+  border: 1px solid grey;
+  width: 100%;
+  padding: 10px;
+}
+
+.file {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.file p {
+  margin: 0;
+  width: 20%;
+}
+
+.file input {
+  width: 70%;
+}
+
+textarea {
+  height: 100px;
+}
+
+.button-sm, .button-lg {
+  padding: 10px;
+  border: 1px solid lightgrey;
+  width: 50%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(108, 146, 148, .2);
+}
+
+.button-lg {
+  padding: 15px 10px 10px 10px;
+  margin-top: 20px;
+  width: 48%;
+  font-family: 'Simplifica';
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 5px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.no-border {
+  border: none;
 }
 
 footer {

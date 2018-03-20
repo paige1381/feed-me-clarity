@@ -25,7 +25,7 @@
     font-size: 38px;
   }
 
-  .recent-cards {
+  .recent-cards, .index-cards {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -48,7 +48,7 @@
     width: 25%;
   }
 
-  .drilldown-heading  {
+  .index-heading  {
     font-size: 38px;
   }
 
@@ -56,10 +56,6 @@
     align-items: center;
     width: 80%;
     margin: 35px auto;
-  }
-
-  .blog-heading {
-    width: 100%;
   }
 
   .feature-image {
@@ -81,6 +77,37 @@
   .recipe {
     text-align: left;
     align-self: flex-start;
+  }
+
+  .create {
+    width: 40%;
+    margin: 35px auto;
+  }
+
+  .create-link {
+    font-size: 16px;
+  }
+
+  .back-link {
+    width: 80%;
+    margin: auto;
+  }
+
+  .form-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .file p {
+    width: 10%;
+  }
+
+  .button-sm {
+    width: 30%;
+  }
+
+  .buttons {
+    width: 100%;
   }
 
   .social-media-icon {

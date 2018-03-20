@@ -30,6 +30,13 @@ app.controller('BlogController', ['$http', function($http) {
 app.controller('RecipeController', ['$http', function($http) {
 }]);
 
+app.controller('BlogFormController', ['$http', function($http) {
+}]);
+
+app.controller('RecipeFormController', ['$http', function($http) {
+}]);
+
+
 
 app.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode({ enabled: true });
@@ -63,6 +70,23 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
     controller: 'RecipeController',
     controllerAs: 'ctrl'
   });
+
+  $routeProvider.when('/create', {
+    templateUrl: 'create.html',
+  });
+
+  $routeProvider.when('/blogForm', {
+    templateUrl: 'blogForm.html',
+    controller: 'BlogFormController',
+    controllerAs: 'ctrl'
+  });
+
+  $routeProvider.when('/recipeForm', {
+    templateUrl: 'recipeForm.html',
+    controller: 'RecipeFormController',
+    controllerAs: 'ctrl'
+  });
+
 
   $routeProvider.when('/', {
     templateUrl: 'home.html',
