@@ -13,6 +13,66 @@ app.controller('MenuController', ['$http', function($http) {
 }]);
 
 app.controller('HomeController', ['$http', function($http) {
+
+  this.url = 'http://localhost:3000/posts';
+
+  this.getPosts = () => {
+    $http({
+      method: 'GET',
+      url: this.url
+    }).then(response => {
+      this.posts = response.data;
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.getPosts();
+
+
+  this.getMindPosts = () => {
+    $http({
+      method: 'GET',
+      url: this.url + '/mind'
+    }).then(response => {
+      this.mind = response.data;
+      console.log(this.mind);
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.getMindPosts();
+
+
+  this.getBodyPosts = () => {
+    $http({
+      method: 'GET',
+      url: this.url + '/body'
+    }).then(response => {
+      this.body = response.data;
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.getBodyPosts();
+
+
+  this.getSoulPosts = () => {
+    $http({
+      method: 'GET',
+      url: this.url + '/soul'
+    }).then(response => {
+      this.soul = response.data;
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.getSoulPosts();
+
+
 }]);
 
 app.controller('MindController', ['$http', function($http) {

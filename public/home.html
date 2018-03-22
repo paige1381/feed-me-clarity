@@ -1,32 +1,32 @@
 <div class="recent-cards">
-  <div class="column card">
-    <img class="card-image" src="https://images.unsplash.com/photo-1502139214982-d0ad755818d8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ba0af2872a696b7bf1ec6438c8add914&auto=format&fit=crop&w=1350&q=80">
+  <div class="column card" ng-repeat="post in ctrl.mind | orderBy:'created_at':1 | limitTo:1">
+    <img class="card-image" src="{{post.images[0].url}}">
     <div class="card-section column">
-      <h3 class="card-title">Lorem ipsum dolor sit amet</h3>
+      <h3 class="card-title">{{post.title}}</h3>
       <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ...
+        {{post.paragraphs[0].text | limitTo: 200}} ...
       </p>
     </div>
     <a class="card-link" href="/blog">read more ></a>
   </div>
 
-  <div class="column card">
-    <img class="card-image" src="https://images.unsplash.com/photo-1508170754725-6e9a5cfbcabf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b51c07fb92a3bc2eaf98f98c3455e822&auto=format&fit=crop&w=1350&q=80">
+  <div class="column card" ng-repeat="post in ctrl.body | orderBy:'created_at':1 | limitTo:1">
+    <img class="card-image" src="{{post.images[0].url}}">
     <div class="card-section column">
-      <h3 class="card-title">Lorem ipsum dolor sit amet</h3>
+      <h3 class="card-title">{{post.title}}</h3>
       <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ...
+        {{post.paragraphs[0].text | limitTo: 200}} ...
       </p>
     </div>
     <a class="card-link" href="/recipe">read more ></a>
   </div>
 
-  <div class="column card">
-    <img class="card-image" src="https://images.unsplash.com/photo-1484627147104-f5197bcd6651?ixlib=rb-0.3.5&s=2125c321373e5ea8acb8f3d9c4395d0f&auto=format&fit=crop&w=1350&q=80">
+  <div class="column card" ng-repeat="post in ctrl.soul | orderBy:'created_at':1 | limitTo:1">
+    <img class="card-image" src="{{post.images[0].url}}">
     <div class="card-section column">
-      <h3 class="card-title">Lorem ipsum dolor sit amet</h3>
+      <h3 class="card-title">{{post.title}}</h3>
       <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ...
+        {{post.paragraphs[0].text | limitTo: 200}} ...
       </p>
     </div>
     <a class="card-link" href="/blog">read more ></a>
@@ -55,21 +55,9 @@
 <div class="popular">
   <h2 class="popular-heading">Popular Posts</h2>
   <div class="popular-images">
-    <a href="#" class="popular-card">
-      <h3 class="popular-title">Lorem ipsum dolor sit amet</h3>
-      <img src="https://images.unsplash.com/photo-1463704131914-97e5aaa0e339?ixlib=rb-0.3.5&s=76b1479415237a8bd1d6cad58af4d1d6&auto=format&fit=crop&w=1350&q=80" class="popular-image">
-    </a>
-    <a href="#" class="popular-card">
-      <h3 class="popular-title">Lorem ipsum dolor sit amet</h3>
-      <img src="https://images.unsplash.com/photo-1466065478348-0b967011f8e0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=277e0050a115848d2984fd58c34c3598&auto=format&fit=crop&w=1344&q=80" class="popular-image">
-    </a>
-    <a href="#" class="popular-card">
-      <h3 class="popular-title">Lorem ipsum dolor sit amet</h3>
-      <img src="https://images.unsplash.com/photo-1504382262782-5b4ece78642b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=725a022e25933d5d334307e718f6ae35&auto=format&fit=crop&w=934&q=80" class="popular-image">
-    </a>
-    <a href="#" class="popular-card">
-      <h3 class="popular-title">Lorem ipsum dolor sit amet</h3>
-      <img src="https://images.unsplash.com/photo-1503457574462-bd27054394c1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a868d956554a60071c89b0026a02f543&auto=format&fit=crop&w=1350&q=80" class="popular-image">
+    <a  ng-repeat="post in ctrl.posts | orderBy:'created_at':1 | limitTo:4" href="#" class="popular-card">
+      <h3 class="popular-title">{{post.title}}</h3>
+      <img src="{{post.images[0].url}}" class="popular-image">
     </a>
   </div>
 </div>
