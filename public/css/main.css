@@ -121,6 +121,7 @@ nav {
 
 .search {
   color: grey;
+  align-items: center;
 }
 
 .search-icon {

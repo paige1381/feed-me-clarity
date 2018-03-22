@@ -58,7 +58,7 @@
   }
 
   .recent-cards {
-    width: 80%;
+    width: 90%;
     margin: 15px auto;
   }
 
@@ -79,6 +79,10 @@
 
   .back-link {
     width: 60%;
+  }
+
+  .social-media {
+    width: 50%;
   }
 
   .mobile {
