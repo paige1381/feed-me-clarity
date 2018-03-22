@@ -93,6 +93,15 @@
     margin: auto;
   }
 
+  .dropdown {
+    text-align: left;
+    width: 100%;
+  }
+
+  select {
+    width: 30%;
+  }
+
   .form-section {
     width: 100%;
     padding: 20px;
