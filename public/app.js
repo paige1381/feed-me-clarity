@@ -5,77 +5,98 @@ app.run(['$rootScope', function($rootScope) {
   $rootScope.$on('$routeChangeSuccess', function () {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   })
-}])
+}]);
+
+
+app.value('postURL', 'http://localhost:3000/posts');
+
+
+app.service('postService', ['$http', 'postURL', function ($http, postURL) {
+
+  this.getPosts = () => {
+    return $http({
+      method: 'GET',
+      url: postURL
+    })
+  }
+
+  this.getMind = () => {
+    return $http({
+      method: 'GET',
+      url: postURL + '/mind'
+    })
+  }
+
+  this.getBody = () => {
+    return $http({
+      method: 'GET',
+      url: postURL + '/body'
+    })
+  }
+
+  this.getSoul = () => {
+    return $http({
+      method: 'GET',
+      url: postURL + '/soul'
+    })
+  }
+  
+}]);
 
 
 app.controller('MenuController', ['$http', function($http) {
   this.mobileMenu = false;
 }]);
 
-app.controller('HomeController', ['$http', function($http) {
 
-  this.url = 'http://localhost:3000/posts';
+app.controller('HomeController', ['$http', 'postService', function($http, postService) {
 
-  this.getPosts = () => {
-    $http({
-      method: 'GET',
-      url: this.url
-    }).then(response => {
-      this.posts = response.data;
-    }).catch(error => {
-      console.log('error:', error);
-    })
-  }
+  postService.getPosts().then(response => {
+    this.posts = response.data;
+    console.log(this.posts);
+  }).catch(error => {
+    console.log('error:', error);
+  });
 
-  this.getPosts();
+  postService.getMind().then(response => {
+    this.mind = response.data;
+    console.log(this.mind);
+  }).catch(error => {
+    console.log('error:', error);
+  });
 
+  postService.getBody().then(response => {
+    this.body = response.data;
+    console.log(this.body);
+  }).catch(error => {
+    console.log('error:', error);
+  });
 
-  this.getMindPosts = () => {
-    $http({
-      method: 'GET',
-      url: this.url + '/mind'
-    }).then(response => {
-      this.mind = response.data;
-      console.log(this.mind);
-    }).catch(error => {
-      console.log('error:', error);
-    })
-  }
-
-  this.getMindPosts();
-
-
-  this.getBodyPosts = () => {
-    $http({
-      method: 'GET',
-      url: this.url + '/body'
-    }).then(response => {
-      this.body = response.data;
-    }).catch(error => {
-      console.log('error:', error);
-    })
-  }
-
-  this.getBodyPosts();
-
-
-  this.getSoulPosts = () => {
-    $http({
-      method: 'GET',
-      url: this.url + '/soul'
-    }).then(response => {
-      this.soul = response.data;
-    }).catch(error => {
-      console.log('error:', error);
-    })
-  }
-
-  this.getSoulPosts();
-
+  postService.getSoul().then(response => {
+    this.soul = response.data;
+    console.log(this.soul);
+  }).catch(error => {
+    console.log('error:', error);
+  });
 
 }]);
 
 app.controller('MindController', ['$http', function($http) {
+
+  // this.getMindPosts = () => {
+  //   $http({
+  //     method: 'GET',
+  //     url: this.url + '/mind'
+  //   }).then(response => {
+  //     this.mind = response.data;
+  //     console.log(this.mind);
+  //   }).catch(error => {
+  //     console.log('error:', error);
+  //   })
+  // }
+  //
+  // this.getMindPosts();
+  //
 }]);
 
 app.controller('BodyController', ['$http', function($http) {
