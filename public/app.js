@@ -40,7 +40,7 @@ app.service('postService', ['$http', 'postURL', function ($http, postURL) {
       url: postURL + '/soul'
     })
   }
-  
+
 }]);
 
 
@@ -81,29 +81,41 @@ app.controller('HomeController', ['$http', 'postService', function($http, postSe
 
 }]);
 
-app.controller('MindController', ['$http', function($http) {
+app.controller('MindController', ['$http', 'postService', function($http, postService) {
 
-  // this.getMindPosts = () => {
-  //   $http({
-  //     method: 'GET',
-  //     url: this.url + '/mind'
-  //   }).then(response => {
-  //     this.mind = response.data;
-  //     console.log(this.mind);
-  //   }).catch(error => {
-  //     console.log('error:', error);
-  //   })
-  // }
-  //
-  // this.getMindPosts();
-  //
+  postService.getMind().then(response => {
+    this.mind = response.data;
+    console.log(this.mind);
+  }).catch(error => {
+    console.log('error:', error);
+  });
+
 }]);
 
-app.controller('BodyController', ['$http', function($http) {
+
+app.controller('BodyController', ['$http', 'postService', function($http, postService) {
+
+  postService.getBody().then(response => {
+    this.body = response.data;
+    console.log(this.body);
+  }).catch(error => {
+    console.log('error:', error);
+  });
+
 }]);
 
-app.controller('SoulController', ['$http', function($http) {
+
+app.controller('SoulController', ['$http', 'postService', function($http, postService) {
+
+  postService.getSoul().then(response => {
+    this.soul = response.data;
+    console.log(this.soul);
+  }).catch(error => {
+    console.log('error:', error);
+  });
+
 }]);
+
 
 app.controller('BlogController', ['$http', function($http) {
 }]);

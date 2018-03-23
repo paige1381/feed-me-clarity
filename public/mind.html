@@ -4,7 +4,7 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
   </p>
   <div class="index-cards">
-    <div class="column card" ng-repeat="post in ctrl.mind track by $index | orderBy:'created_at':1">
+    <div class="column card" ng-repeat="post in ctrl.mind | orderBy:'created_at':1">
       <img class="card-image" src="{{post.images[0].url}}">
       <div class="card-section column">
         <h3 class="card-title">{{post.title}}</h3>
