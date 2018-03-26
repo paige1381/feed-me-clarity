@@ -7,7 +7,7 @@
         {{post.paragraphs[0].text | limitTo: 200}} ...
       </p>
     </div>
-    <a class="card-link" href="/blog">read more ></a>
+    <a class="card-link" href="/blog/{{post.id}}">read more ></a>
   </div>
 
   <div class="column card" ng-repeat="post in ctrl.body | orderBy:'created_at':1 | limitTo:1">
@@ -18,7 +18,7 @@
         {{post.paragraphs[0].text | limitTo: 200}} ...
       </p>
     </div>
-    <a class="card-link" href="/recipe">read more ></a>
+    <a class="card-link" href="/blog/{{post.id}}">read more ></a>
   </div>
 
   <div class="column card" ng-repeat="post in ctrl.soul | orderBy:'created_at':1 | limitTo:1">
@@ -29,7 +29,7 @@
         {{post.paragraphs[0].text | limitTo: 200}} ...
       </p>
     </div>
-    <a class="card-link" href="/blog">read more ></a>
+    <a class="card-link" href="/blog/{{post.id}}">read more ></a>
   </div>
 </div>
 
@@ -55,7 +55,7 @@
 <div class="popular">
   <h2 class="popular-heading">Popular Posts</h2>
   <div class="popular-images">
-    <a  ng-repeat="post in ctrl.posts | orderBy:'created_at':1 | limitTo:4" href="#" class="popular-card">
+    <a  ng-repeat="post in ctrl.posts | orderBy:'created_at':1 | limitTo:4" href="/blog/{{post.id}}" class="popular-card">
       <h3 class="popular-title">{{post.title}}</h3>
       <img src="{{post.images[0].url}}" class="popular-image">
     </a>

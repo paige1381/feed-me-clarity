@@ -8,7 +8,7 @@ app.run(['$rootScope', function($rootScope) {
 }]);
 
 
-app.value('postURL', 'http://localhost:3000/posts');
+app.value('postURL', 'http://localhost:3000/posts/');
 
 
 app.service('postService', ['$http', 'postURL', function ($http, postURL) {
@@ -23,21 +23,28 @@ app.service('postService', ['$http', 'postURL', function ($http, postURL) {
   this.getMind = () => {
     return $http({
       method: 'GET',
-      url: postURL + '/mind'
+      url: postURL + 'mind'
     })
   }
 
   this.getBody = () => {
     return $http({
       method: 'GET',
-      url: postURL + '/body'
+      url: postURL + 'body'
     })
   }
 
   this.getSoul = () => {
     return $http({
       method: 'GET',
-      url: postURL + '/soul'
+      url: postURL + 'soul'
+    })
+  }
+
+  this.getBlog = (postId) => {
+    return $http({
+      method: 'GET',
+      url: postURL + postId
     })
   }
 
@@ -81,6 +88,7 @@ app.controller('HomeController', ['$http', 'postService', function($http, postSe
 
 }]);
 
+
 app.controller('MindController', ['$http', 'postService', function($http, postService) {
 
   postService.getMind().then(response => {
@@ -117,18 +125,58 @@ app.controller('SoulController', ['$http', 'postService', function($http, postSe
 }]);
 
 
-app.controller('BlogController', ['$http', function($http) {
+app.controller('BlogController', ['$http', '$routeParams', 'postService', function($http, $routeParams, postService) {
+
+  this.id = $routeParams.id;
+  this.imageRepeatsArray = [];
+  this.sectionRepeatsArray = [];
+  this.blog = {};
+
+  postService.getBlog(this.id).then(response => {
+      this.blog = response.data;
+      console.log(this.blog);
+      this.setRepeats();
+    }).catch(error => {
+      console.log('error:', error);
+    });
+
+  this.setRepeats = () => {
+
+    this.paragraphRepeats = this.blog.paragraphs.length - 1;
+    console.log('paragraphRepeats:', this.paragraphRepeats);
+
+    if ((this.blog.images.length - 1) % 2 === 0) {
+      this.imageRepeats = (this.blog.images.length - 1) / 2
+    }
+    else {
+      this.imageRepeats = this.blog.images.length / 2
+    }
+    console.log('imageRepeats:', this.imageRepeats);
+
+    if (this.imageRepeats > this.paragraphRepeats) {
+      this.sectionRepeats = this.paragraphRepeats + (this.imageRepeats - this.paragraphRepeats)
+    }
+    else {
+      this.sectionRepeats = this.imageRepeats + (this.paragraphRepeats - this.imageRepeats)
+    }
+
+    console.log('sectionRepeats:', this.sectionRepeats);
+    for (let i = 0; i < this.sectionRepeats; i++) {
+      this.sectionRepeatsArray.push(i);
+    }
+    console.log(this.sectionRepeatsArray);
+
+  }
+
 }]);
 
-app.controller('RecipeController', ['$http', function($http) {
-}]);
 
 app.controller('BlogFormController', ['$http', function($http) {
 }]);
 
+
 app.controller('RecipeFormController', ['$http', function($http) {
 }]);
-
 
 
 app.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
@@ -152,15 +200,9 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
     controllerAs: 'ctrl'
   });
 
-  $routeProvider.when('/blog', {
+  $routeProvider.when('/blog/:id', {
     templateUrl: 'blog.html',
     controller: 'BlogController',
-    controllerAs: 'ctrl'
-  });
-
-  $routeProvider.when('/recipe', {
-    templateUrl: 'recipe.html',
-    controller: 'RecipeController',
     controllerAs: 'ctrl'
   });
 
