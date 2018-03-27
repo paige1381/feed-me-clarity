@@ -1,4 +1,4 @@
-const app = angular.module('feedMeClarity', ['ngRoute']);
+const app = angular.module('feedMeClarity', ['ngRoute', 'angularTrix']);
 
 
 app.run(['$rootScope', function($rootScope) {
@@ -172,6 +172,13 @@ app.controller('BlogController', ['$http', '$routeParams', 'postService', functi
 
 
 app.controller('BlogFormController', ['$http', function($http) {
+
+  this.blogData = {};
+
+  this.processBlogForm = () => {
+
+  }
+
 }]);
 
 

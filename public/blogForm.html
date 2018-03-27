@@ -3,14 +3,14 @@
   <h4>Back</h4>
 </a>
 
-<form class="blog">
+<form method="post" class="blog" ng-submit="ctrl.processBlogForm()">
   <h2 class="blog-heading">Create a Blog Post</h2>
 
-  <input type="text" class="input" required placeholder="Title*">
+  <input type="text" class="input" ng-model="ctrl.blogData.title" required placeholder="Title*">
 
   <div class="dropdown">
-    <p class="label">Category:*</p>
-    <select>
+    <p class="blog-label">Category:*</p>
+    <select ng-model="ctrl.blogData.post_type" required>
       <option value="Mind">Mind</option>
       <option value="Body">Body</option>
       <option value="Soul">Soul</option>
@@ -19,19 +19,20 @@
 
   <div class="form-section">
     <div class="file">
-      <p class="label">Image:*</p>
-      <input type="file" class="file-input">
+      <p class="blog-label">Image:*</p>
+      <input ng-model="ctrl.blogData.images[$index].url" type="file" class="file-input">
     </div>
     <div class="button-sm">Add image</div>
   </div>
 
   <div class="form-section">
-    <textarea type="text" required class="input" placeholder="Paragraph*"></textarea>
+    <trix-editor angular-trix  ng-model="ctrl.blogData.paragraphs[$index].text" type="text" required placeholer="Paragraph*">
+    </trix-editor>
     <div class="button-sm">Add paragraph</div>
   </div>
 
   <div class="form-section">
-    <input type="text" class="input" placeholder="Tag">
+    <input ng-model="ctrl.blogData.tags[$index].tag" type="text" class="input" placeholder="Tag">
     <div class="button-sm">Add tag</div>
   </div>
 
